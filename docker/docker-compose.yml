@@ -1,0 +1,11 @@
+version: '3'
+services:
+  redis:
+    container_name: test_redis
+    image: redis:7.0.0
+    command: redis-server --requirepass qwer1234 --port 6379
+    labels:
+      - 'name:redis'
+      - 'mode=standalone'
+    ports:
+      - '6379:6379'
